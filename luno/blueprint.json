@@ -1,0 +1,147 @@
+{
+  "version": "2026-05-12",
+  "formSet": {
+    "slug": "blog",
+    "name": "Blog (starter)",
+    "description": "Reference blueprint for the Next.js starter. Create the same structure in LUNO Admin via Template → Blog, or run: hcms form apply --blueprint luno/blueprint.json"
+  },
+  "forms": [
+    {
+      "key": "main",
+      "label": null,
+      "sortOrder": 0,
+      "fields": [
+        {
+          "fieldKey": "title",
+          "type": "text",
+          "label": "Title",
+          "sortOrder": 0,
+          "constraints": {
+            "required": true,
+            "maxLength": 200,
+            "widget_role": "title"
+          }
+        },
+        {
+          "fieldKey": "slug",
+          "type": "text",
+          "label": "Slug",
+          "sortOrder": 1,
+          "constraints": {
+            "required": true,
+            "maxLength": 200
+          }
+        },
+        {
+          "fieldKey": "thumbnail",
+          "type": "image",
+          "label": "Thumbnail",
+          "sortOrder": 2,
+          "constraints": {
+            "widget_role": "thumbnail"
+          }
+        },
+        {
+          "fieldKey": "published_at",
+          "type": "date",
+          "label": "Published at",
+          "sortOrder": 3,
+          "constraints": {
+            "widget_role": "published_at"
+          }
+        },
+        {
+          "fieldKey": "category",
+          "type": "select",
+          "label": "Category",
+          "sortOrder": 4,
+          "constraints": {
+            "enum": [
+              "Tech",
+              "News",
+              "Events",
+              "Design"
+            ],
+            "widget_role": "category"
+          }
+        },
+        {
+          "fieldKey": "tags",
+          "type": "multiselect",
+          "label": "Tags",
+          "sortOrder": 5,
+          "constraints": {
+            "enum": [
+              "React",
+              "TypeScript",
+              "Design",
+              "API",
+              "Tutorial"
+            ],
+            "widget_role": "tags"
+          }
+        },
+        {
+          "fieldKey": "excerpt",
+          "type": "textarea",
+          "label": "Excerpt",
+          "sortOrder": 6,
+          "constraints": {
+            "maxLength": 300,
+            "widget_role": "excerpt"
+          }
+        },
+        {
+          "fieldKey": "body",
+          "type": "tiptap",
+          "label": "Body",
+          "sortOrder": 7,
+          "constraints": {}
+        }
+      ]
+    }
+  ],
+  "contentListColumns": [
+    {
+      "formKey": "main",
+      "fieldKey": "title"
+    },
+    {
+      "formKey": "main",
+      "fieldKey": "category"
+    },
+    {
+      "formKey": "main",
+      "fieldKey": "published_at"
+    }
+  ],
+  "contentSearchColumns": [
+    {
+      "formKey": "main",
+      "fieldKey": "title"
+    },
+    {
+      "formKey": "main",
+      "fieldKey": "category"
+    },
+    {
+      "formKey": "main",
+      "fieldKey": "tags"
+    },
+    {
+      "formKey": "main",
+      "fieldKey": "published_at"
+    }
+  ],
+  "provenance": {
+    "sourceType": "file",
+    "sourceSummary": "luno starter blueprint",
+    "model": "n/a",
+    "promptVersion": "2026-05-12",
+    "createdAt": "2026-05-12T00:00:00.000Z"
+  },
+  "notes": [
+    "Use entry slug as URL segment /blog/[slug]",
+    "widget_role is pre-configured: embed with <div id='luno-list' data-form-set='blog' ...> + widget.js"
+  ]
+}
